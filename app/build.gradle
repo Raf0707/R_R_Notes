@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace 'raf.console.archnotes'
+    namespace 'raf.console.rrnotes'
     compileSdk 34
 
     defaultConfig {
-        applicationId "raf.console.archnotes"
+        applicationId "raf.console.rrnotes"
         minSdk 24
         targetSdk 33
         versionCode 1
@@ -74,6 +74,8 @@ dependencies {
 
     // extended Icons
     implementation "androidx.compose.material:material-icons-extended"
+
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
 
     // Navigation Compose
     implementation("androidx.navigation:navigation-compose")

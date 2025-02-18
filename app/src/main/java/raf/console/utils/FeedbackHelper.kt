@@ -1,4 +1,4 @@
-package raf.console.archnotes.utils
+package raf.console.rrnotes.utils
 
 import android.content.ActivityNotFoundException
 import android.content.Context
@@ -8,7 +8,7 @@ import android.net.Uri
 import android.os.Build
 import android.telephony.TelephonyManager
 import android.widget.Toast
-import raf.console.archnotes.R
+import raf.console.rrnotes.R
 
 object FeedbackHelper {
 

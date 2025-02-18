@@ -1,4 +1,4 @@
-package raf.console.archnotes.utils
+package raf.console.rrnotes.utils
 
 import android.content.Context
 import android.content.Intent
