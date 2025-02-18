@@ -112,7 +112,8 @@ fun NoteNavigation(
                 selectedTheme = selectedTheme,
                 onThemeChange = { viewModel.setTheme(it) },
                 contrastThemeEnabled = contrastThemeEnabled,
-                onContrastThemeToggle = { viewModel.setContrastTheme(it) }
+                onContrastThemeToggle = { viewModel.setContrastTheme(it) },
+                onBackClick = { navHostController.popBackStack(Screens.AboutScreen.name, inclusive = false) } // Обрабатываем нажатие "назад"
             )
         }
     }
