@@ -66,7 +66,7 @@ fun AboutScreen(
                         modifier = Modifier.size(128.dp)
                     )
                     Text(text = stringResource(R.string.app_name))
-                    Text(text = "R&R")
+                    //Text(text = "R&R")
                     ListItem(
                         title = stringResource(R.string.bug_report_title),
                         subtitle = stringResource(R.string.bug_report_subtitle),
@@ -175,7 +175,7 @@ fun AboutScreen(
                     HorizontalDivider(Modifier.padding(16.dp, 0.dp, 16.dp, 0.dp))
                     ListItem(
                         title = "Исходный код",
-                        subtitle = "Открытый исходный код приложения Заметки на GitHub",
+                        subtitle = "Открытый исходный код приложения R&R Notes на GitHub",
                         icon = painterResource(id = R.drawable.code_24px),
                         onClick = {
                             ChromeCustomTabUtil.openUrl(
