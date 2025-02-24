@@ -1,6 +1,7 @@
 package raf.console.rrnotes
 
 import android.app.Application
+import android.content.Context
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -11,7 +12,8 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
-import raf.console.utils.ThemeOption
+import raf.console.rrnotes.utils.ThemeOption
+import java.util.Locale
 
 class AppViewModel(application: Application) : AndroidViewModel(application) {
 
@@ -39,6 +41,13 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
             initialValue = false
         )
 
+    val selectedLanguage: StateFlow<Locale> = dataStoreManager.getLanguage()
+        .stateIn(
+            scope = viewModelScope,
+            started = SharingStarted.WhileSubscribed(5000),
+            initialValue = Locale("ru") // Default language
+        )
+
     val visitCount: StateFlow<Int> = dataStoreManager.getVisitCount()
         .stateIn(
             scope = viewModelScope,
@@ -52,6 +61,16 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
             started = SharingStarted.WhileSubscribed(5000),
             initialValue = false
         )
+
+    // Новый StateFlow для языка
+    val language: StateFlow<Locale> = dataStoreManager.getLanguage()
+        .stateIn(
+            scope = viewModelScope,
+            started = SharingStarted.WhileSubscribed(5000),
+            initialValue = Locale("ru") // Значение по умолчанию
+        )
+
+    // Функции для обновления данных
 
     fun setTheme(theme: ThemeOption) {
         viewModelScope.launch(Dispatchers.IO) {
@@ -76,11 +95,37 @@ class AppViewModel(application: Application) : AndroidViewModel(application) {
             dataStoreManager.setVisitCount(count)
         }
     }
+
     fun setRequestSent(status: Boolean) {
         viewModelScope.launch(Dispatchers.IO) {
             dataStoreManager.setRequestSent(status)
         }
     }
+
+    // Функция для обновления языка
+    /*fun setLanguage(language: String) {
+        viewModelScope.launch(Dispatchers.IO) {
+            dataStoreManager.setLanguage(language)
+        }
+    }*/
+
+    fun setLanguage(locale: Locale) {
+        viewModelScope.launch(Dispatchers.IO) {
+            dataStoreManager.setLanguage(locale)
+        }
+
+    }
+
+    fun setLanguage(locale: Locale, context: Context) {
+        viewModelScope.launch(Dispatchers.IO) {
+            dataStoreManager.setLanguage(locale)
+        }
+        Locale.setDefault(locale)
+        val config = context.resources.configuration
+        config.setLocale(locale)
+        context.resources.updateConfiguration(config, context.resources.displayMetrics)
+    }
+
 
 
     class AppViewModelFactory(private val application: Application) : ViewModelProvider.Factory {

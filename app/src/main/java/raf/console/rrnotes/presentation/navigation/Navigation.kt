@@ -1,13 +1,8 @@
 package raf.console.rrnotes.presentation.navigation
 
-import android.annotation.SuppressLint
-import android.content.Context
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavGraph.Companion.findStartDestination
@@ -15,7 +10,6 @@ import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import raf.console.rrnotes.AppViewModel
 import raf.console.rrnotes.presentation.about_app.AboutScreen
@@ -27,8 +21,6 @@ import raf.console.rrnotes.presentation.detail.DetailScreen
 import raf.console.rrnotes.presentation.home.HomeScreen
 import raf.console.rrnotes.presentation.home.HomeViewModel
 import raf.console.rrnotes.presentation.settings.SettingsScreen
-import raf.console.rrnotes.presentation.welcome.WelcomeScreen
-import raf.console.utils.ThemeOption
 
 enum class Screens {
     Home, Detail, Bookmark, AboutScreen, SettingsScreen
@@ -103,6 +95,7 @@ fun NoteNavigation(
         composable(route = Screens.SettingsScreen.name) {
             val viewModel: AppViewModel = hiltViewModel()
             val selectedTheme by viewModel.theme.collectAsState()
+            val selectedLanguage by viewModel.language.collectAsState()
             val isDynamicColorsEnabled by viewModel.dynamicColor.collectAsState()
             val contrastThemeEnabled by viewModel.contrastTheme.collectAsState()
 
@@ -113,6 +106,8 @@ fun NoteNavigation(
                 onThemeChange = { viewModel.setTheme(it) },
                 contrastThemeEnabled = contrastThemeEnabled,
                 onContrastThemeToggle = { viewModel.setContrastTheme(it) },
+                onLanguageChange = { viewModel.setLanguage(it) },
+                selectedLanguage = selectedLanguage.language,
                 onBackClick = { navHostController.popBackStack(Screens.AboutScreen.name, inclusive = false) } // Обрабатываем нажатие "назад"
             )
         }

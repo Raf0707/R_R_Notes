@@ -2,6 +2,7 @@ package raf.console.rrnotes.presentation.about_app
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -60,8 +61,10 @@ fun AboutScreen(
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center
                 ) {
+                    
+                    val imageRes = R.drawable.arch_notes_logo_dark_theme
                     Image(
-                        painter = painterResource(id = R.drawable.arch_notes_logo),
+                        painter = painterResource(id = imageRes),
                         contentDescription = "App Icon",
                         modifier = Modifier.size(128.dp)
                     )
@@ -101,8 +104,8 @@ fun AboutScreen(
                     )
                     HorizontalDivider(Modifier.padding(16.dp, 0.dp, 16.dp, 0.dp))
                     ListItem(
-                        title = "Настройки",
-                        subtitle = "Открыть настройки приложения",
+                        title = stringResource(R.string.settings),
+                        subtitle = stringResource(R.string.open_settings),
                         icon = painterResource(id = R.drawable.settings_24px),
                         onClick = {
 
@@ -174,8 +177,8 @@ fun AboutScreen(
                     )
                     HorizontalDivider(Modifier.padding(16.dp, 0.dp, 16.dp, 0.dp))
                     ListItem(
-                        title = "Исходный код",
-                        subtitle = "Открытый исходный код приложения R&R Notes на GitHub",
+                        title = stringResource(R.string.source_code),
+                        subtitle = stringResource(R.string.open_source_code_github),
                         icon = painterResource(id = R.drawable.code_24px),
                         onClick = {
                             ChromeCustomTabUtil.openUrl(
@@ -186,7 +189,7 @@ fun AboutScreen(
                     )
                     HorizontalDivider(Modifier.padding(16.dp, 0.dp, 16.dp, 0.dp))
                     ListItem(
-                        title = "Версия",
+                        title = stringResource(R.string.version),
                         subtitle = "1.0.0",
                         icon = painterResource(id = R.drawable.update_24px)
                     )
@@ -206,34 +209,36 @@ fun AboutScreen(
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center
                 ) {
+
+                    val imageRes = R.drawable.book_open_dark_theme
                     Image(
-                        painter = painterResource(id = R.drawable.book_open),
+                        painter = painterResource(id = imageRes),
                         contentDescription = "Book Icon",
                         modifier = Modifier.size(128.dp)
                     )
                     Text(
-                        text = "Любите читать?",
+                        text = stringResource(R.string.do_you_like_reading),
                         style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.Bold),
                         modifier = Modifier.padding(bottom = 8.dp, start = 32.dp, end = 32.dp),
                         textAlign = TextAlign.Center
                     )
 
                     Text(
-                        text = "Читайте любимые книги и сортируйте их по категориям в RafBook Reader",
+                        text = stringResource(R.string.read_your_favourite_books),
                         style = MaterialTheme.typography.bodyMedium,
                         modifier = Modifier.padding(bottom = 8.dp, start = 32.dp, end = 32.dp),
                         textAlign = TextAlign.Center
                     )
 
                     Text(
-                        text = "RafBook Reader - одна из лучших читалок в каталоге RuStore, поддерживающая форматы .pdf, .txt, .epub, .fb2, .zip, .html, .htm, .md",
+                        text = stringResource(R.string.rafbook_reader),
                         style = MaterialTheme.typography.bodyMedium,
                         modifier = Modifier.padding(bottom = 8.dp, start = 32.dp, end = 32.dp),
                         textAlign = TextAlign.Center
                     )
                     ListItem(
-                        title = "Скачать RafBook Reader",
-                        subtitle = "Скачать приложение из каталога RuStore",
+                        title = stringResource(R.string.dounload_rafbook_reader),
+                        subtitle = stringResource(R.string.download_from_rustore),
                         icon = painterResource(id = R.drawable.book_open),
                         onClick = {
                             ChromeCustomTabUtil.openUrl(
@@ -256,45 +261,49 @@ fun AboutScreen(
             ElevatedCard(shape = ShapeDefaults.Large) {
                 Column(
                     modifier = Modifier
-                        .fillMaxWidth().padding(start = 16.dp, end = 16.dp),
+                        .fillMaxWidth()
+                        .padding(start = 16.dp, end = 16.dp),
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center
                 ) {
+
+                    val imageRes = R.drawable.code_24px_dark_theme
+
                     Image(
-                        painter = painterResource(id = R.drawable.code_24px),
+                        painter = painterResource(imageRes),
                         contentDescription = "Code Icon",
                         modifier = Modifier.size(128.dp)
                     )
                     Text(
-                        text = "Raf</>Console Studio",
+                        text = stringResource(R.string.raf_console_studio),
                         style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.Bold),
                         modifier = Modifier.padding(bottom = 8.dp, start = 32.dp, end = 32.dp),
                         textAlign = TextAlign.Center
                     )
 
                     Text(
-                        text = "Вы программист и ищете комьюнити для общения, проектов и встреч? (встречи в Москве)",
+                        text = stringResource(R.string.are_your_programmer),
                         style = MaterialTheme.typography.bodyMedium,
                         modifier = Modifier.padding(bottom = 8.dp, start = 32.dp, end = 32.dp),
                         textAlign = TextAlign.Center
                     )
 
                     Text(
-                        text = "Или вы просто хотите научиться программированию, но не знаете с чего начать?",
+                        text = stringResource(R.string.study_programming),
                         style = MaterialTheme.typography.bodyMedium,
                         modifier = Modifier.padding(bottom = 8.dp, start = 32.dp, end = 32.dp),
                         textAlign = TextAlign.Center
                     )
 
                     Text(
-                        text = "Или просто хотите пообщаться?",
+                        text = stringResource(R.string.would_you_like_talking),
                         style = MaterialTheme.typography.bodyMedium,
                         modifier = Modifier.padding(bottom = 8.dp, start = 32.dp, end = 32.dp),
                         textAlign = TextAlign.Center
                     )
                     ListItem(
-                        title = "Перейти в Raf</>Console",
-                        subtitle = "Raf</>Console Studio - беседа в телеграм",
+                        title = stringResource(R.string.go_to_raf_console),
+                        subtitle = stringResource(R.string.tg_raf_console_studio),
                         icon = painterResource(id = R.drawable.code_24px),
                         onClick = {
                             ChromeCustomTabUtil.openUrl(
@@ -319,8 +328,8 @@ fun AboutScreen(
 @Preview(showBackground = true)
 @Composable
 fun ListItem(
-    title: String = "Title",
-    subtitle: String = "Subtitle",
+    title: String = stringResource(R.string.title_list_item),
+    subtitle: String = stringResource(R.string.subtitle_list_item),
     icon: Painter = painterResource(id = R.drawable.ic_launcher_foreground),
     onClick: () -> Unit = {}
 ) {

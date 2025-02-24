@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">R&amp;R Notes</string>
+    <string name="terms_of_service" translatable="false">Умовы карыстання</string>
+    <string name="privacy_policy" translatable="false">Палітыка прыватнасці</string>
+    <string name="bug_report_title">Паведаміць пра памылку</string>
+    <string name="rate_the_app_title">Ацаніце дадатак</string>
+    <string name="rate_the_app_subtitle">Ацаніце дадатак у RuStore</string>
+    <string name="bug_report_subtitle">Калі ласка, апішыце праблему і адпраўце нам</string>
+    <string name="welcome_screen_title">Сардэчна запрашаем у «R&amp;R Notes»! 🏛✨\n\n</string>
+    <string name="privacy_policy_message">Працягваючы, вы згаджаецеся з нашымі Умовамі карыстання і пацвярджаеце, што азнаёмлены з Палітыкай прыватнасці.</string>
+    <string name="welcome_screen_message">Натхняйцеся, стварайце і захоўвайце ўсе свае ідэі ў адным месцы. Тут вашы думкі набываюць форму, а нататкі становяцца асновай новых дасягненняў.\n\n🖊️ Запісвайце важнае!\n📐 Арганізуйце ідэі!\n🎨 Рэалізуйце праекты!</string>
+
+    <string name="github_title">Github</string>
+    <string name="github_subtitle">Профіль Github</string>
+    <string name="github_url" translatable="false">https://github.com/Raf0707/</string>
+
+    <string name="vk_title">VK</string>
+    <string name="vk_subtitle">Наша супольнасць у VK</string>
+    <string name="vk_url" translatable="false">https://vk.com/mahabbaa</string>
+
+    <string name="telegram_title">Telegram</string>
+    <string name="telegram_subtitle">Канал у Telegram</string>
+    <string name="telegram_url" translatable="false">https://t.me/ibnRustum</string>
+
+    <string name="other_apps_title">Іншыя дадаткі</string>
+    <string name="other_apps_subtitle">Нашы іншыя дадаткі</string>
+    <string name="other_apps_url" translatable="false">https://apps.rustore.ru/developer/ZPBnoCoBczpBFPZK0munW8NSpRTEayCj</string>
+    <string name="no">Не\n</string>
+    <string name="settings">Налады</string>
+    <string name="open_settings">Адкрыць налады дадатка</string>
+    <string name="source_code">Крынічны код</string>
+    <string name="open_source_code_github"><![CDATA[Адкрыты крынічны код дадатка R&R Notes на GitHub]]></string>
+    <string name="do_you_like_reading">Любіце чытаць?</string>
+    <string name="read_your_favourite_books">Чытайце любімыя кнігі і сартуйце іх па катэгорыях з RafBook Reader</string>
+    <string name="rafbook_reader">RafBook Reader — адзін з найлепшых дадаткаў для чытання ў каталозе RuStore, падтрымлівае .pdf, .txt, .epub, .fb2, .zip, .html, .htm, .md</string>
+    <string name="dounload_rafbook_reader">Спампаваць RafBook Reader</string>
+    <string name="are_your_programmer">Вы праграміст і шукаеце супольнасць для абмеркавання, працы над праектамі і сустрэч? (сустрэчы ў Маскве)</string>
+    <string name="study_programming">Або хочаце вывучаць праграмаванне, але не ведаеце, з чаго пачаць?</string>
+    <string name="would_you_like_talking">Або проста хочаце пагутарыць?</string>
+    <string name="go_to_raf_console"><![CDATA[Далучыцца да Raf</>Console]]></string>
+    <string name="version">Версія</string>
+    <string name="download_from_rustore">Спампаваць дадатак з каталога RuStore</string>
+    <string name="raf_console_studio"><![CDATA[Raf</>Console Studio]]></string>
+    <string name="tg_raf_console_studio"><![CDATA[Raf</>Console Studio – Чат у Telegram]]></string>
+    <string name="title_list_item">Загаловак</string>
+    <string name="subtitle_list_item">Падзагаловак</string>
+    <string name="content_notes_text_field">Ваша нататка</string>
+    <string name="title_notes_text_field">Загаловак нататкі</string>
+    <string name="language_settings">Настройки языка</string>
+</resources>

@@ -1,11 +1,13 @@
 package raf.console.rrnotes
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -19,6 +21,7 @@ import androidx.compose.material.icons.filled.Bookmark
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material3.BottomAppBar
+import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
@@ -37,19 +40,24 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 import raf.console.rrnotes.presentation.about_app.AboutScreenViewModel
 import raf.console.rrnotes.presentation.bookmark.BookmarkViewModel
 import raf.console.rrnotes.presentation.detail.DetailAssistedFactory
 import raf.console.rrnotes.presentation.home.HomeViewModel
+//import raf.console.rrnotes.presentation.locale.LanguageSwitcher
+import raf.console.rrnotes.presentation.locale.LocaleViewModel
 import raf.console.rrnotes.presentation.navigation.NoteNavigation
 import raf.console.rrnotes.presentation.navigation.Screens
 import raf.console.rrnotes.presentation.navigation.navigateToSingleTop
 import raf.console.rrnotes.presentation.screens.details.enums.TabScreen
 import raf.console.rrnotes.ui.theme.NoteApplicationTheme
-import raf.console.utils.ThemeOption
+import raf.console.rrnotes.utils.ThemeOption
+import java.util.Locale
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -57,39 +65,144 @@ class MainActivity : ComponentActivity() {
     @Inject
     lateinit var assistedFactory: DetailAssistedFactory
 
+
+    @SuppressLint("CoroutineCreationDuringComposition")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            val appViewModel: AppViewModel = viewModel() // Загружаем ViewModel
 
-            // Получаем настройки
+        var dataStoreManager: DataStoreManager = DataStoreManager(applicationContext)
+
+        // Загружаем сохранённый язык
+        lifecycleScope.launch {
+            dataStoreManager.getLanguage().collect { savedLanguage ->
+                updateAppLanguage(savedLanguage.toString())
+                Locale.setDefault(savedLanguage)
+            }
+        }
+
+        setContent {
+            val appViewModel: AppViewModel = viewModel()
+
+            // Получаем настройки темы
             val selectedTheme by appViewModel.theme.collectAsState()
             val dynamicColorState by appViewModel.dynamicColor.collectAsState()
             val contrastThemeState by appViewModel.contrastTheme.collectAsState()
-
+            val selectLanguage by appViewModel.language.collectAsState()
             // Определяем, должна ли быть тёмная тема
+
             val darkTheme = when (selectedTheme) {
                 ThemeOption.Dark -> true
                 ThemeOption.Light -> false
                 else -> isSystemInDarkTheme()
             }
 
+            // Загружаем сохранённый язык
+            lifecycleScope.launch {
+                dataStoreManager.getLanguage().collect { savedLanguage ->
+                    updateAppLanguage(savedLanguage.toString())
+                    Locale.setDefault(savedLanguage)
+                }
+            }
+            updateAppLanguage(selectLanguage.language)
+            //LanguageSwitcher(viewModel())
+            //updateAppLanguage(selectLanguage.toString())
+
             NoteApplicationTheme(
                 darkTheme = darkTheme,
                 dynamicColor = dynamicColorState,
                 contrastTheme = contrastThemeState
             ) {
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background,
                     contentColor = MaterialTheme.colorScheme.onSurface,
                 ) {
-                    NoteApp()
+                    NoteApp()  // Основной контент
                 }
             }
+
+
+
         }
     }
+
+    private fun updateAppLanguage(language: String) {
+        val locale = when (language) {
+            "Русский" -> Locale.setDefault(Locale("ru", ))      // Russian
+            "Беларуская" -> Locale.setDefault(Locale("be", ))      // Belarusian
+            "English" -> Locale.setDefault(Locale("en"))       // English
+            "Deutsch" -> Locale.setDefault(Locale("de"))         // German
+            "Français" -> Locale.setDefault(Locale("fr"))      // French
+            "Polski" -> Locale.setDefault(Locale("pl"))         // Polish
+            "Español" -> Locale.setDefault(Locale("es"))        // Spanish
+            "Eesti" -> Locale.setDefault(Locale("et"))        // Estonian
+            "Italiano" -> Locale.setDefault(Locale("it"))      // Italian
+            "Ελληνικά" -> Locale.setDefault(Locale("el"))        // Greek
+            "हिन्दी" -> Locale.setDefault(Locale("hi"))         // Hindi
+            "فارسی" -> Locale.setDefault(Locale("fa"))       // Persian
+            "العربية" -> Locale.setDefault(Locale("ar"))         // Arabic (Standard)
+            "العربية الفلسطينية" -> Locale.setDefault(Locale("ay", )) // Palestinian Arabic
+            "Bahasa Indonesia" -> Locale.setDefault(Locale("id"))    // Indonesian
+            "עברית" -> Locale.setDefault(Locale("he"))            // Hebrew
+            "ייִדיש" -> Locale.setDefault(Locale("yi"))             // Yiddish
+            "Татарча" -> Locale.setDefault(Locale("tt"))        // Tatar
+            "Башҡортса" -> Locale.setDefault(Locale("ba"))       // Bashkir
+            "Қазақша" -> Locale.setDefault(Locale("kk"))        // Kazakh
+            "Кыргызча" -> Locale.setDefault(Locale("ky",))       // Kyrgyz
+            "Тоҷикӣ" -> Locale.setDefault(Locale("tg"))       // Tajik
+            "Oʻzbekcha" -> Locale.setDefault(Locale("uz"))        // Uzbek
+            "Հայերեն" -> Locale.setDefault(Locale("hy"))        // Armenian
+            "Azərbaycan dili" -> Locale.setDefault(Locale("az"))  // Azerbaijani
+            else -> Locale.setDefault(Locale("ru", ))
+        }
+        //Locale.setDefault(Locale("ru"))
+        /*val config = resources.configuration
+        config.setLocale(locale)
+        resources.updateConfiguration(config, resources.displayMetrics)*/
+    }
+
+    private fun updateAppLanguageWithContext(language: String, context: Context) {
+        val locale = when (language) {
+            "Русский" -> Locale("ru", "RU") // Russian
+            "Беларуская" -> Locale("be", "BY") // Belarusian ✅ (исправлено)
+            "English" -> Locale("en") // English
+            "Deutsch" -> Locale("de") // German
+            "Français" -> Locale("fr") // French
+            "Polski" -> Locale("pl") // Polish
+            "Español" -> Locale("es") // Spanish
+            "Eesti" -> Locale("et") // Estonian
+            "Italiano" -> Locale("it") // Italian
+            "Ελληνικά" -> Locale("el") // Greek
+            "हिन्दी" -> Locale("hi") // Hindi
+            "فارسی" -> Locale("fa") // Persian
+            "العربية" -> Locale("ar") // Arabic (Standard)
+            "العربية الفلسطينية" -> Locale("ar", "PS") // Palestinian Arabic
+            "Bahasa Indonesia" -> Locale("id") // Indonesian
+            "עברית" -> Locale("he") // Hebrew
+            "ייִדיש" -> Locale("yi") // Yiddish
+            "Татарча" -> Locale("tt") // Tatar
+            "Башҡортса" -> Locale("ba") // Bashkir
+            "Қазақша" -> Locale("kk") // Kazakh
+            "Кыргызча" -> Locale("ky", "KG") // Kyrgyz ✅ (исправлено)
+            "Тоҷикӣ" -> Locale("tg") // Tajik
+            "Oʻzbekcha" -> Locale("uz") // Uzbek
+            "Հայերեն" -> Locale("hy") // Armenian
+            "Azərbaycan dili" -> Locale("az") // Azerbaijani
+            else -> Locale("ru", "RU")
+        }
+
+        // Устанавливаем глобальный локаль
+        Locale.setDefault(locale)
+
+        // Обновляем конфигурацию ресурсов (ВАЖНО!)
+        val resources = context.resources
+        val config = resources.configuration
+        config.setLocale(locale)
+
+        // Применяем изменения
+        resources.updateConfiguration(config, resources.displayMetrics)
+    }
+
 
     @OptIn(ExperimentalMaterial3Api::class)
     @Composable
@@ -165,3 +278,5 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
+

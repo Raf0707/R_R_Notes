@@ -1,5 +1,6 @@
 package raf.console.rrnotes.presentation.detail
 
+import android.content.SharedPreferences
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -15,6 +16,8 @@ import raf.console.rrnotes.data.local.model.Note
 import raf.console.rrnotes.domain.use_cases.AddUseCase
 import raf.console.rrnotes.domain.use_cases.GetNoteByIdUseCase
 import java.util.Date
+
+
 
 class DetailViewModel @AssistedInject constructor(
     private val addUseCase: AddUseCase,
@@ -105,11 +108,3 @@ class DetailedViewModelFactory(
 interface DetailAssistedFactory {
     fun create(noteId: Long): DetailViewModel
 }
-
-
-
-
-
-
-
-

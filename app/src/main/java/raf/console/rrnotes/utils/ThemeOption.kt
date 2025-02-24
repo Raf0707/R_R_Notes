@@ -1,4 +1,4 @@
-package raf.console.utils
+package raf.console.rrnotes.utils
 
 enum class ThemeOption {
     SystemDefault,

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">R&amp;R Notes</string>
+    <string name="terms_of_service" translatable="false">Хизмат кўрсатиш шартлари</string>
+    <string name="privacy_policy" translatable="false">Махфийлик сиёсати</string>
+    <string name="bug_report_title">Хато ҳақида хабар бериш</string>
+    <string name="rate_the_app_title">Иловани баҳолаш</string>
+    <string name="rate_the_app_subtitle">RuStore\'да иловани баҳолаш</string>
+    <string name="bug_report_subtitle">Илтимос, муаммони тасвирлаб беринг ва бизга юборинг</string>
+    <string name="welcome_screen_title">«R&amp;R Notes» иловага хуш келибсиз! 🏛✨\n\n</string>
+    <string name="privacy_policy_message">Давом эттириб, сиз бизнинг Хизмат кўрсатиш шартларимизни қабул қиласиз ва Махфийлик сиёсати билан танишганингизни тасдиқлайсиз.</string>
+    <string name="welcome_screen_message">Илҳомланинг, лойиҳаларингизни яратиб, ҳар бир фикрингизни бир жойга ёзинг. Бу ерда фикрларингиз шаклланади, эсламанглар эса янги ютуқлар учун асос бўлади.\n\n🖊️ Муҳим нарсаларни ёзинг!\n📐 Фикрларингизни тузинг!\n🎨 Режаларингизни амалга оширинг!</string>
+
+    <string name="github_title">Github</string>
+    <string name="github_subtitle">Github профили</string>
+    <string name="github_url" translatable="false">https://github.com/Raf0707/</string>
+
+    <string name="vk_title">VK</string>
+    <string name="vk_subtitle">Бизнинг VK жамоамиз</string>
+    <string name="vk_url" translatable="false">https://vk.com/mahabbaa</string>
+
+    <string name="telegram_title">Telegram</string>
+    <string name="telegram_subtitle">Telegram канали</string>
+    <string name="telegram_url" translatable="false">https://t.me/ibnRustum</string>
+
+    <string name="other_apps_title">Бошқа иловалар</string>
+    <string name="other_apps_subtitle">Бизнинг бошқа иловаларимизни</string>
+    <string name="other_apps_url" translatable="false">https://apps.rustore.ru/developer/ZPBnoCoBczpBFPZK0munW8NSpRTEayCj</string>
+    <string name="no">Йўқ\n</string>
+    <string name="settings">Созламалар</string>
+    <string name="open_settings">Илова созламаларини очиш</string>
+    <string name="source_code">Манба коди</string>
+    <string name="open_source_code_github"><![CDATA[R&R Notes иловасининг очиқ манба коди GitHubда]]></string>
+    <string name="do_you_like_reading">Ўқишни ёқтирасизми?</string>
+    <string name="read_your_favourite_books">Севимли китобларингизни ўқинг ва уларни RafBook Readerда категориялар бўйича тартибланг</string>
+    <string name="rafbook_reader">RafBook Reader - RuStore каталогидаги энг яхши ўқувчиларидан бири бўлиб, .pdf, .txt, .epub, .fb2, .zip, .html, .htm, .md форматларини қўллаб-қувватлайди</string>
+    <string name="dounload_rafbook_reader">RafBook Reader илovasини юклаб олинг</string>
+    <string name="are_your_programmer">Сиз дастурчи мисиз ва жамоа қидиряпсизми, лойиҳалар ва учрашувлар учун? (учрашувлар Москвада)</string>
+    <string name="study_programming">Ёки дастурлашни ўрганмоқчимисиз, лекин қаердан бошлашни билмайсизми?</string>
+    <string name="would_you_like_talking">Ёки шунчаки суҳбатлашишни хохлайсизми?</string>
+    <string name="go_to_raf_console"><![CDATA[Raf</>Console га ўтиш]]></string>
+    <string name="version">Версия</string>
+    <string name="download_from_rustore">RuStore каталогидан иловани юклаб олинг</string>
+    <string name="raf_console_studio"><![CDATA[Raf</>Console Studio]]></string>
+    <string name="tg_raf_console_studio"><![CDATA[Raf</>Console Studio - Telegramдаги суҳбат]]></string>
+    <string name="title_list_item">Номи</string>
+    <string name="subtitle_list_item">Субноми</string>
+    <string name="content_notes_text_field">Эслама</string>
+    <string name="title_notes_text_field">Номи</string>
+    <string name="language_settings">Настройки языка</string>
+</resources>

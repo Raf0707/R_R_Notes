@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">یادداشت‌های R&amp;R</string>
+    <string name="terms_of_service" translatable="false">شرایط خدمات</string>
+    <string name="privacy_policy" translatable="false">سیاست حفظ حریم خصوصی</string>
+    <string name="bug_report_title">گزارش خطا</string>
+    <string name="rate_the_app_title">امتیاز دادن به برنامه</string>
+    <string name="rate_the_app_subtitle">امتیاز دادن به برنامه در RuStore</string>
+    <string name="bug_report_subtitle">لطفاً مشکل را توضیح دهید و برای ما ارسال کنید</string>
+    <string name="welcome_screen_title">به "یادداشت‌های R&amp;R" خوش آمدید! 🏛✨\n\n</string>
+    <string name="privacy_policy_message">با ادامه دادن، شما شرایط خدمات ما را می‌پذیرید و تأیید می‌کنید که سیاست حفظ حریم خصوصی ما را مطالعه کرده‌اید.</string>
+    <string name="welcome_screen_message">الهام بگیرید، طراحی کنید و هر ایده‌ای را در یک مکان ثبت کنید. اینجا افکار شما شکل می‌گیرند و یادداشت‌ها به پایه‌ای برای دستاوردهای جدید تبدیل می‌شوند.\n\n🖊️ مهم‌ترین‌ها را یادداشت کنید!\n📐 ایده‌ها را ساختاردهی کنید!\n🎨 طرح‌ها را به واقعیت تبدیل کنید!</string>
+
+    <string name="github_title">گیت‌هاب</string>
+    <string name="github_subtitle">پروفایل گیت‌هاب</string>
+    <string name="github_url" translatable="false">https://github.com/Raf0707/</string>
+
+    <string name="vk_title">وی‌کی</string>
+    <string name="vk_subtitle">جامعه ما در وی‌کی</string>
+    <string name="vk_url" translatable="false">https://vk.com/mahabbaa</string>
+
+    <string name="telegram_title">تلگرام</string>
+    <string name="telegram_subtitle">کانال تلگرام</string>
+    <string name="telegram_url" translatable="false">https://t.me/ibnRustum</string>
+
+    <string name="other_apps_title">برنامه‌های دیگر</string>
+    <string name="other_apps_subtitle">برنامه‌های دیگر ما</string>
+    <string name="other_apps_url" translatable="false">https://apps.rustore.ru/developer/ZPBnoCoBczpBFPZK0munW8NSpRTEayCj</string>
+    <string name="no">نه\n</string>
+    <string name="settings">تنظیمات</string>
+    <string name="open_settings">باز کردن تنظیمات برنامه</string>
+    <string name="source_code">کد منبع</string>
+    <string name="open_source_code_github"><![CDATA[کد منبع اپلیکیشن R&R Notes در گیت‌هاب]]></string>
+    <string name="do_you_like_reading">آیا از خواندن لذت می‌برید؟</string>
+    <string name="read_your_favourite_books">کتاب‌های مورد علاقه خود را بخوانید و آن‌ها را در RafBook Reader به دسته‌بندی کنید</string>
+    <string name="rafbook_reader">RafBook Reader - یکی از بهترین کتابخوان‌ها در کاتالوگ RuStore، که از فرمت‌های .pdf، .txt، .epub، .fb2، .zip، .html، .htm، .md پشتیبانی می‌کند</string>
+    <string name="dounload_rafbook_reader">دانلود RafBook Reader</string>
+    <string name="are_your_programmer">آیا شما یک برنامه‌نویس هستید و به دنبال جامعه‌ای برای ارتباط، پروژه‌ها و دیدارها می‌گردید؟ (دیدارها در مسکو)</string>
+    <string name="study_programming">یا شما فقط می‌خواهید برنامه‌نویسی یاد بگیرید، اما نمی‌دانید از کجا شروع کنید؟</string>
+    <string name="would_you_like_talking">یا فقط می‌خواهید با دیگران صحبت کنید؟</string>
+    <string name="go_to_raf_console"><![CDATA[به Raf</>Console بروید]]></string>
+    <string name="version">نسخه</string>
+    <string name="download_from_rustore">دانلود برنامه از کاتالوگ RuStore</string>
+    <string name="raf_console_studio"><![CDATA[Raf</>Console Studio]]></string>
+    <string name="tg_raf_console_studio"><![CDATA[Raf</>Console Studio - گفتگو در تلگرام]]></string>
+    <string name="title_list_item">عنوان</string>
+    <string name="subtitle_list_item">زیرعنوان</string>
+    <string name="content_notes_text_field">یادداشت</string>
+    <string name="title_notes_text_field">عنوان</string>
+    <string name="language_settings">Настройки языка</string>
+</resources>

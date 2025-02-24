@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">R&amp;R Notes</string>
+    <string name="terms_of_service" translatable="false">Кызмат шарттары</string>
+    <string name="privacy_policy" translatable="false">Жеке маалыматты коргоо саясаты</string>
+    <string name="bug_report_title">Ката тууралуу билдирүү</string>
+    <string name="rate_the_app_title">Тиркеме баасын бериңиз</string>
+    <string name="rate_the_app_subtitle">РуStore тиркемесинде баа берүү</string>
+    <string name="bug_report_subtitle">Проблеманы сүрөттөп, бизге жиберип коюңуз</string>
+    <string name="welcome_screen_title">"R&amp;R Notes" тиркемесине кош келиңиз! 🏛✨\n\n</string>
+    <string name="privacy_policy_message">Улантууну тандап, биздин Кызмат шарттарын кабыл аласыз жана Жеке маалыматты коргоо саясатыбыз менен таанышканыңызды тастыктайсыз.</string>
+    <string name="welcome_screen_message">Ынсап алыңыз, долбоорлоо жана ар бир идеяны бир жерде жазып коюңуз. Бул жерде ойлоруңуз форма алып, жазуулар жаңы жетишкендиктер үчүн негиз болот.\n\n🖊️ Маанилүүлөрдү жазыңыз!\n📐 Идеяларды түзүңүз!\n🎨 Ой-plандарды ишке ашырыңыз!</string>
+
+    <string name="github_title">Github</string>
+    <string name="github_subtitle">Github профили</string>
+    <string name="github_url" translatable="false">https://github.com/Raf0707/</string>
+
+    <string name="vk_title">VK</string>
+    <string name="vk_subtitle">Биздин VK коомчулугубуз</string>
+    <string name="vk_url" translatable="false">https://vk.com/mahabbaa</string>
+
+    <string name="telegram_title">Telegram</string>
+    <string name="telegram_subtitle">Telegram-канал</string>
+    <string name="telegram_url" translatable="false">https://t.me/ibnRustum</string>
+
+    <string name="other_apps_title">Башка тиркемелер</string>
+    <string name="other_apps_subtitle">Биздин башка тиркемелер</string>
+    <string name="other_apps_url" translatable="false">https://apps.rustore.ru/developer/ZPBnoCoBczpBFPZK0munW8NSpRTEayCj</string>
+    <string name="no">Жок\n</string>
+    <string name="settings">Параметрлер</string>
+    <string name="open_settings">Тиркемени орнотууларын ачыңыз</string>
+    <string name="source_code">Чыганак коду</string>
+    <string name="open_source_code_github"><![CDATA[R&R Notes тиркемесинин ачык чыганак коду GitHubда]]></string>
+    <string name="do_you_like_reading">Окууну жактырасызбы?</string>
+    <string name="read_your_favourite_books">Узак убакыт бою сүйүктүү китептериңизди окуп, аларды категорияларга бөлүңүз RafBook Readerде</string>
+    <string name="rafbook_reader">RafBook Reader - RuStore каталогундагы эң мыкты китеп окугучтардын бири, .pdf, .txt, .epub, .fb2, .zip, .html, .htm, .md форматтарын колдойт</string>
+    <string name="dounload_rafbook_reader">RafBook Readerди жүктөө</string>
+    <string name="are_your_programmer">Сиз программист болуп, чогулуштар, долбоорлор жана жыйындар үчүн коомчулук издеп жатасызбы? (Москвада жыйындар)</string>
+    <string name="study_programming">Же сиз жөн гана программалоону үйрөнгүңүз келеби, бирок кайдан баштаарын билбейсизби?</string>
+    <string name="would_you_like_talking">Же жөн гана сүйлөшкүңүз келеби?</string>
+    <string name="go_to_raf_console"><![CDATA[Raf</>Consoleго өтүңүз]]></string>
+    <string name="version">Нускасы</string>
+    <string name="download_from_rustore">РуStore каталогунан тиркемени жүктөө</string>
+    <string name="raf_console_studio"><![CDATA[Raf</>Console Studio]]></string>
+    <string name="tg_raf_console_studio"><![CDATA[Raf</>Console Studio - Telegramдагы сүйлөшүү]]></string>
+    <string name="title_list_item">Аты</string>
+    <string name="subtitle_list_item">Төмөнкү наам</string>
+    <string name="content_notes_text_field">Жазуу</string>
+    <string name="title_notes_text_field">Аты</string>
+    <string name="language_settings">Настройки языка</string>
+</resources>

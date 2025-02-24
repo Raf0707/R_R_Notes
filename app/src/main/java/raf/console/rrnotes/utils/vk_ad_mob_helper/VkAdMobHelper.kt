@@ -1,4 +1,4 @@
-package raf.console.utils.vk_ad_mob_helper
+package raf.console.rrnotes.utils.vk_ad_mob_helper
 
 /*
 import android.content.Context

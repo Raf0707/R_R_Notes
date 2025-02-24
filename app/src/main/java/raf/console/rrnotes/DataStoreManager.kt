@@ -11,6 +11,7 @@ import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import java.util.Locale
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "app_prefs")
 
@@ -22,6 +23,7 @@ class DataStoreManager(private val context: Context) {
         val CONTRAST_THEME_KEY = booleanPreferencesKey("contrast_theme")
         val VISIT_COUNT_KEY = intPreferencesKey("visit_count")
         val REQUEST_SENT_KEY = booleanPreferencesKey("request_sent")
+        val LANGUAGE_KEY = stringPreferencesKey("selected_language") // Новый ключ для языка
     }
 
     suspend fun <T> save(key: Preferences.Key<T>, value: T) {
@@ -53,7 +55,6 @@ class DataStoreManager(private val context: Context) {
 
     fun getContrastTheme() = read(PreferencesKeys.CONTRAST_THEME_KEY, false)
 
-
     suspend fun setVisitCount(count: Int) {
         save(PreferencesKeys.VISIT_COUNT_KEY, count)
     }
@@ -66,4 +67,47 @@ class DataStoreManager(private val context: Context) {
 
     fun getRequestSent() = read(PreferencesKeys.REQUEST_SENT_KEY, false)
 
+    // Методы для работы с языком
+    /*suspend fun setLanguage(language: String) {
+        save(PreferencesKeys.LANGUAGE_KEY, language)
+    }*/
+
+    suspend fun setLanguage(locale: Locale) {
+        save(PreferencesKeys.LANGUAGE_KEY, locale.toLanguageTag()) // Например, "ar-PS"
+    }
+
+    fun getLanguage(): Flow<Locale> = read(PreferencesKeys.LANGUAGE_KEY, "ru-RU")
+        .map { languageCode -> Locale.forLanguageTag(languageCode) ?: Locale("ru-RU") }
+
+    /*fun getLanguage(): Flow<Locale> = read(PreferencesKeys.LANGUAGE_KEY, "ru") // Значение по умолчанию "ru"
+        .map { languageCode ->
+            when (languageCode) {
+                "ru" -> Locale("ru")
+                "be" -> Locale("be")
+                "en" -> Locale("en")
+                "de" -> Locale("de")
+                "fr" -> Locale("fr")
+                "pl" -> Locale("pl")
+                "es" -> Locale("es")
+                "et" -> Locale("et")
+                "it" -> Locale("it")
+                "el" -> Locale("el")
+                "hi" -> Locale("hi")
+                "fa" -> Locale("fa")
+                "ar" -> Locale("ar")
+                "ar-PS" -> Locale("ar", "PS")
+                "id" -> Locale("id")
+                "he" -> Locale("he")
+                "yi" -> Locale("yi")
+                "tt" -> Locale("tt")
+                "ba" -> Locale("ba")
+                "kk" -> Locale("kk")
+                "ky" -> Locale("ky")
+                "tg" -> Locale("tg")
+                "uz" -> Locale("uz")
+                "hy" -> Locale("hy")
+                "az" -> Locale("az")
+                else -> Locale("ru")  // Default to Russian
+            }
+        }*/
 }
