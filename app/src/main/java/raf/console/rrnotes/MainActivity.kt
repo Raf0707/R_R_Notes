@@ -1,7 +1,9 @@
 package raf.console.rrnotes
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Context
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -44,7 +46,9 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import raf.console.rrnotes.presentation.about_app.AboutScreenViewModel
 import raf.console.rrnotes.presentation.bookmark.BookmarkViewModel
 import raf.console.rrnotes.presentation.detail.DetailAssistedFactory
@@ -80,6 +84,12 @@ class MainActivity : ComponentActivity() {
             }
         }
 
+        var savedLanguage = runBlocking {
+            dataStoreManager.getLanguage().firstOrNull() ?: "ru"
+        }
+
+        updateAppLanguage(savedLanguage.toString(), this)
+
         setContent {
             val appViewModel: AppViewModel = viewModel()
 
@@ -96,6 +106,8 @@ class MainActivity : ComponentActivity() {
                 else -> isSystemInDarkTheme()
             }
 
+            Locale.setDefault(selectLanguage)
+
             // Загружаем сохранённый язык
             lifecycleScope.launch {
                 dataStoreManager.getLanguage().collect { savedLanguage ->
@@ -106,6 +118,10 @@ class MainActivity : ComponentActivity() {
             updateAppLanguage(selectLanguage.language)
             //LanguageSwitcher(viewModel())
             //updateAppLanguage(selectLanguage.toString())
+
+            LaunchedEffect(selectLanguage) {
+                updateAppLanguage(selectLanguage.language, this@MainActivity)
+            }
 
             NoteApplicationTheme(
                 darkTheme = darkTheme,
@@ -127,6 +143,41 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun updateAppLanguage(language: String) {
+        val locale = when (language) {
+            "Русский" -> Locale.setDefault(Locale("ru", ))      // Russian
+            "Беларуская" -> Locale.setDefault(Locale("be", ))      // Belarusian
+            "English" -> Locale.setDefault(Locale("en"))       // English
+            "Deutsch" -> Locale.setDefault(Locale("de"))         // German
+            "Français" -> Locale.setDefault(Locale("fr"))      // French
+            "Polski" -> Locale.setDefault(Locale("pl"))         // Polish
+            "Español" -> Locale.setDefault(Locale("es"))        // Spanish
+            "Eesti" -> Locale.setDefault(Locale("et"))        // Estonian
+            "Italiano" -> Locale.setDefault(Locale("it"))      // Italian
+            "Ελληνικά" -> Locale.setDefault(Locale("el"))        // Greek
+            "हिन्दी" -> Locale.setDefault(Locale("hi"))         // Hindi
+            "فارسی" -> Locale.setDefault(Locale("fa"))       // Persian
+            "العربية" -> Locale.setDefault(Locale("ar"))         // Arabic (Standard)
+            "العربية الفلسطينية" -> Locale.setDefault(Locale("ay", )) // Palestinian Arabic
+            "Bahasa Indonesia" -> Locale.setDefault(Locale("id"))    // Indonesian
+            "עברית" -> Locale.setDefault(Locale("he"))            // Hebrew
+            "ייִדיש" -> Locale.setDefault(Locale("yi"))             // Yiddish
+            "Татарча" -> Locale.setDefault(Locale("tt"))        // Tatar
+            "Башҡортса" -> Locale.setDefault(Locale("ba"))       // Bashkir
+            "Қазақша" -> Locale.setDefault(Locale("kk"))        // Kazakh
+            "Кыргызча" -> Locale.setDefault(Locale("ky",))       // Kyrgyz
+            "Тоҷикӣ" -> Locale.setDefault(Locale("tg"))       // Tajik
+            "Oʻzbekcha" -> Locale.setDefault(Locale("uz"))        // Uzbek
+            "Հայերեն" -> Locale.setDefault(Locale("hy"))        // Armenian
+            "Azərbaycan dili" -> Locale.setDefault(Locale("az"))  // Azerbaijani
+            else -> Locale.setDefault(Locale("ru", ))
+        }
+        //Locale.setDefault(Locale("ru"))
+        /*val config = resources.configuration
+        config.setLocale(locale)
+        resources.updateConfiguration(config, resources.displayMetrics)*/
+    }
+
+    private fun updateAppLanguage(language: String, context: Context) {
         val locale = when (language) {
             "Русский" -> Locale.setDefault(Locale("ru", ))      // Russian
             "Беларуская" -> Locale.setDefault(Locale("be", ))      // Belarusian
@@ -202,6 +253,46 @@ class MainActivity : ComponentActivity() {
         // Применяем изменения
         resources.updateConfiguration(config, resources.displayMetrics)
     }
+
+    /*private fun updateAppLanguage(language: String, activity: Activity) {
+        val locale = when (language) {
+            "Русский" -> Locale("ru", "RU")
+            "Беларуская" -> Locale("be", "BY")
+            "English" -> Locale("en")
+            "Deutsch" -> Locale("de")
+            "Français" -> Locale("fr")
+            "Polski" -> Locale("pl")
+            "Español" -> Locale("es")
+            "Eesti" -> Locale("et")
+            "Italiano" -> Locale("it")
+            "Ελληνικά" -> Locale("el")
+            "हिन्दी" -> Locale("hi")
+            "فارسی" -> Locale("fa")
+            "العربية" -> Locale("ar")
+            "العربية الفلسطينية" -> Locale("ar", "PS")
+            "Bahasa Indonesia" -> Locale("id")
+            "עברית" -> Locale("he")
+            "ייִדיש" -> Locale("yi")
+            "Татарча" -> Locale("tt")
+            "Башҡортса" -> Locale("ba")
+            "Қазақша" -> Locale("kk")
+            "Кыргызча" -> Locale("ky", "KG")
+            "Тоҷикӣ" -> Locale("tg")
+            "Oʻzbekcha" -> Locale("uz")
+            "Հայերեն" -> Locale("hy")
+            "Azərbaycan dili" -> Locale("az")
+            else -> Locale("ru", "RU")
+        }
+
+        Locale.setDefault(locale)
+        val config = Configuration()
+        config.setLocale(locale)
+
+        val context = activity.createConfigurationContext(config)
+        activity.resources.updateConfiguration(config, activity.resources.displayMetrics)
+        activity.baseContext.resources.updateConfiguration(config, activity.baseContext.resources.displayMetrics)
+    }*/
+
 
 
     @OptIn(ExperimentalMaterial3Api::class)
