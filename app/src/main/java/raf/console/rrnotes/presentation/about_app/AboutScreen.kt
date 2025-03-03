@@ -190,7 +190,7 @@ fun AboutScreen(
                     HorizontalDivider(Modifier.padding(16.dp, 0.dp, 16.dp, 0.dp))
                     ListItem(
                         title = stringResource(R.string.version),
-                        subtitle = "1.0.0",
+                        subtitle = "1.0.1",
                         icon = painterResource(id = R.drawable.update_24px)
                     )
                 }
