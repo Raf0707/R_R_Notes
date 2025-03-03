@@ -79,35 +79,4 @@ class DataStoreManager(private val context: Context) {
     fun getLanguage(): Flow<Locale> = read(PreferencesKeys.LANGUAGE_KEY, "ru-RU")
         .map { languageCode -> Locale.forLanguageTag(languageCode) ?: Locale("ru-RU") }
 
-    /*fun getLanguage(): Flow<Locale> = read(PreferencesKeys.LANGUAGE_KEY, "ru") // Значение по умолчанию "ru"
-        .map { languageCode ->
-            when (languageCode) {
-                "ru" -> Locale("ru")
-                "be" -> Locale("be")
-                "en" -> Locale("en")
-                "de" -> Locale("de")
-                "fr" -> Locale("fr")
-                "pl" -> Locale("pl")
-                "es" -> Locale("es")
-                "et" -> Locale("et")
-                "it" -> Locale("it")
-                "el" -> Locale("el")
-                "hi" -> Locale("hi")
-                "fa" -> Locale("fa")
-                "ar" -> Locale("ar")
-                "ar-PS" -> Locale("ar", "PS")
-                "id" -> Locale("id")
-                "he" -> Locale("he")
-                "yi" -> Locale("yi")
-                "tt" -> Locale("tt")
-                "ba" -> Locale("ba")
-                "kk" -> Locale("kk")
-                "ky" -> Locale("ky")
-                "tg" -> Locale("tg")
-                "uz" -> Locale("uz")
-                "hy" -> Locale("hy")
-                "az" -> Locale("az")
-                else -> Locale("ru")  // Default to Russian
-            }
-        }*/
 }

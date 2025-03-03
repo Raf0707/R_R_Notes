@@ -1,51 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">ملاحظات R&amp;R</string>
-    <string name="terms_of_service" translatable="false">شروط الخدمة</string>
-    <string name="privacy_policy" translatable="false">سياسة الخصوصية</string>
-    <string name="bug_report_title">الإبلاغ عن خطأ</string>
-    <string name="rate_the_app_title">قيّم التطبيق</string>
-    <string name="rate_the_app_subtitle">قيّم التطبيق في RuStore</string>
-    <string name="bug_report_subtitle">من فضلك، اشرح المشكلة وابعتها إلنا</string>
-    <string name="welcome_screen_title">أهلاً وسهلاً في "ملاحظات R&amp;R"! 🏛✨\n\n</string>
-    <string name="privacy_policy_message">بمواصلة استخدامك، انت بتوافق على شروط الخدمة وبتأكد إنك قرأت سياسة الخصوصية تبعتنا.</string>
-    <string name="welcome_screen_message">استلهم، صمم ودوّن كل فكرة بمكان واحد. هنا أفكارك رح تتحول لواقع، والملاحظات رح تكون أساس لتحقيق إنجازات جديدة.\n\n🖊️ دوّن الأشياء المهمة!\n📐 نظّم أفكارك!\n🎨 نفّذ تصوراتك!</string>
-
-    <string name="github_title">جيثب</string>
-    <string name="github_subtitle">ملف جيثب تبعي</string>
-    <string name="github_url" translatable="false">https://github.com/Raf0707/</string>
-
-    <string name="vk_title">VK</string>
-    <string name="vk_subtitle">مجتمعنا في VK</string>
-    <string name="vk_url" translatable="false">https://vk.com/mahabbaa</string>
-
-    <string name="telegram_title">تليجرام</string>
-    <string name="telegram_subtitle">قناة تليجرام</string>
-    <string name="telegram_url" translatable="false">https://t.me/ibnRustum</string>
-
-    <string name="other_apps_title">تطبيقات تانية</string>
-    <string name="other_apps_subtitle">تطبيقاتنا التانية</string>
-    <string name="other_apps_url" translatable="false">https://apps.rustore.ru/developer/ZPBnoCoBczpBFPZK0munW8NSpRTEayCj</string>
-    <string name="no">لا\n</string>
-    <string name="settings">الإعدادات</string>
-    <string name="open_settings">افتح إعدادات التطبيق</string>
-    <string name="source_code">كود المصدر</string>
-    <string name="open_source_code_github"><![CDATA[الكود المفتوح للتطبيق R&R Notes على جيثب]]></string>
-    <string name="do_you_like_reading">تحب القراءة؟</string>
-    <string name="read_your_favourite_books">اقرأ كتبك المفضلة ورتبها حسب الفئات في RafBook Reader</string>
-    <string name="rafbook_reader">RafBook Reader - واحدة من أفضل تطبيقات القراءة في دليل RuStore، بتدعم صيغ .pdf، .txt، .epub، .fb2، .zip، .html، .htm، .md</string>
-    <string name="dounload_rafbook_reader">تحميل RafBook Reader</string>
-    <string name="are_your_programmer">إنت مبرمج وبدك تلاقي مجتمع للتواصل والمشاريع واللقاءات؟ (اللقاءات في موسكو)</string>
-    <string name="study_programming">أو بدك تتعلم البرمجة وما بعرف من وين تبدأ؟</string>
-    <string name="would_you_like_talking">أو مجرد حابب تحكي؟</string>
-    <string name="go_to_raf_console"><![CDATA[روح على Raf</>Console]]></string>
-    <string name="version">الإصدار</string>
-    <string name="download_from_rustore">تحميل التطبيق من دليل RuStore</string>
-    <string name="raf_console_studio"><![CDATA[Raf</>Console Studio]]></string>
-    <string name="tg_raf_console_studio"><![CDATA[Raf</>Console Studio - دردشة على تليجرام]]></string>
-    <string name="title_list_item">العنوان</string>
-    <string name="subtitle_list_item">العنوان الفرعي</string>
-    <string name="content_notes_text_field">ملاحظة</string>
-    <string name="title_notes_text_field">العنوان</string>
-    <string name="language_settings">Настройки языка</string>
-</resources>

@@ -187,7 +187,7 @@ fun SettingsScreen(
         }
 
 
-        item {
+        /*item {
             // Language Settings
             Text(
                 text = "Language Settings",
@@ -205,7 +205,7 @@ fun SettingsScreen(
                 //selectedLanguage = selectedLanguage,
                 onLanguageChange = onLanguageChange
             )
-        }
+        }*/
 
 
 
